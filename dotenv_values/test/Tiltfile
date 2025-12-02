@@ -1,6 +1,6 @@
-load('../Tiltfile', 'dotenv')
+load('../Tiltfile', 'dotenv_values')
 
-env = dotenv(fn='.env')
+env = dotenv_values(fn='.env')
 os.putenv('COMPOSE_PROJECT_NAME', 'redmine-api-dev')
 
 expected_variables = {

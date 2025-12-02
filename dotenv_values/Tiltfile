@@ -1,5 +1,5 @@
 # based on the official Tilt `dotenv` extension: https://github.com/tilt-dev/tilt-extensions/tree/master/dotenv (last hash verified against: 3d51999)
-def dotenv(fn=".env", verbose=False, showValues=False):
+def dotenv_values(fn=".env", verbose=False, showValues=False):
     if not os.path.exists(fn):
         warn("Environment variables file not found: '%s'" % fn)
         return {}
