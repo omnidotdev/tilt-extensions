@@ -4,6 +4,10 @@ Omni extensions (effectively, plugins) for [Tilt](https://tilt.dev). These are *
 
 Learn more about Tilt extensions [here](https://docs.tilt.dev/extensions.html).
 
+## Extensions
+
+- `dotenv_values`: Load environment variables from a file into a dictionary
+
 ## License
 
 The code in this repository is licensed under MIT, &copy; Omni LLC. See [LICENSE.md](LICENSE.md) for more information.
