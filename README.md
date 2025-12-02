@@ -7,6 +7,7 @@ Learn more about Tilt extensions [here](https://docs.tilt.dev/extensions.html).
 ## Extensions
 
 - `dotenv_values`: Load environment variables from a file into a dictionary
+- More coming soon 🤫
 
 ## License
 
