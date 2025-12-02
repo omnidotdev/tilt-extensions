@@ -1,0 +1,32 @@
+load('../Tiltfile', 'dotenv')
+
+env = dotenv(fn='.env')
+os.putenv('COMPOSE_PROJECT_NAME', 'redmine-api-dev')
+
+expected_variables = {
+    'TESTVAR': 'success',
+    'THIRD': 'a = b',
+    "ENV_VAR_WITH_QUOTES_1": " quotes 'and' spaces       ",
+    "ENV_VAR_WITH_QUOTES_2": ' quotes "and" spaces       ',
+    "ENV_VAR_WITH_QUOTES_3": " mixed 'quotes' \"and\" spaces       ",
+    "MULTILINE": "This is a multi-line\nvalue that spans\nthree lines.",
+    "MULTILINE_WITH_SPACES": "   This is a multi-line \n   value that spans  \n   three lines with leading spaces.   ",
+}
+
+unexpected_variables = [
+    "#COMMENTED_VARNAME",
+]
+
+for key, value in expected_variables.items():
+    received = env.get(key)
+    if received != value:
+        fail("env variable '%s' with unexpected value. Expected '%s', received '%s'" % (key, value, received))
+
+for key in unexpected_variables:
+    if key in env:
+        fail("env variable '%s' is set, but it shouldn't" % key)
+
+local_resource(
+    'echo-env-vars',
+    'echo "All expected env vars are set correctly!"',
+)
