@@ -9,6 +9,7 @@ dotenv_values reads `.env` or another specified file and loads the key value pai
 ```py
 load('ext://dotenv_values', 'dotenv_values')
 
+# `dotenv_values()` loads `.env` by default, or:
 env_local = dotenv_values(".env.local")
 
 # then, it can be used in a service:
