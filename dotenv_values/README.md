@@ -23,3 +23,7 @@ local_resource(
 ## Acknowledgments
 
 All original work was created by, and credit goes to, [ln](https://github.com/tachiniererin).
+
+## License
+
+The code in this repository is licensed under Apache 2.0, &copy; [Omni LLC](https://omni.dev). See [LICENSE.md](LICENSE.md) for more information.
